@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Card from "./Card";
 import './App.css';
 
-function App() {
+const randNum = () => Math.floor(Math.random() * 100) + 1;
+
+export default function App() {
+  const [nums, setNums] = useState([randNum(), randNum(), randNum()]);
+
+  const updateNums = () => {
+    setNums([randNum(), randNum(), randNum()]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>CARD VALUE SIMULATOR</h1>
+      
+      <Card num={nums[0]} />
+      <Card num={nums[1]} />
+      <Card num={nums[2]} />
+
+      <button onClick={updateNums} className="update-btn">Update Cards</button>
     </div>
   );
 }
-
-export default App;
