@@ -7,13 +7,20 @@ const randNum = () => Math.floor(Math.random() * 100) + 1;
 export default function App() {
   const [nums, setNums] = useState([randNum(), randNum(), randNum()]);
 
-  const updateNums = () => {
+  const [count, setCount] = useState(0)
+  
+  const updateNums = () => {              /* or function updateNums(){
+                                                  setNums([randNum(), randNum(), randNum()])
+                                                         } */
     setNums([randNum(), randNum(), randNum()]);
+
+    setCount(count + 1)   //updates the count variable.
   };
 
   return (
     <div>
       <h1>CARD VALUE SIMULATOR</h1>
+      <h2>You have updated the cards' values {count} times</h2>
       
       <Card num={nums[0]} />
       <Card num={nums[1]} />

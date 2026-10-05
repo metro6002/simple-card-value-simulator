@@ -18,6 +18,13 @@ h1 {
     color: #333;
 }
 
+ /*h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+    border-radius: 8px;
+} */
+
 /* Cards container */
 div {
     text-align: center;
